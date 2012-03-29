@@ -1,0 +1,39 @@
+/*
+* Arabic Converter v1.0
+* 
+* Copyright 2012, Accorpa, LLC
+* Licensed under GPL Version 3 License
+* http://www.gnu.org/licenses/gpl-3.0.txt
+*
+* download: https://github.com/Accorpa/Arabic-Converter-From-and-To-Arabic-Presentation-Forms-B
+*/
+
+This is a Converter to Arabic characters from and to Arabic Presentation Forms B
+	1- Allow you to use custom arabic fonts in your mac or iOS application.
+	2- overcome the current bug in iOS that prevent you from using custom fonts , 
+		and limit you the standard arabic font in ios.
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Dependencies:
+=-=-=-=-=-=-=
+    * no dependencies
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Basic Usage:
+=-=-=-=-=-=-
+    1) Download the .m and .h files and add them to your xCode project.
+    2) include ArabicConverter.h in your files.
+    	
+	//Convert to Arabic Presentation Forms B - to allow custom fonts
+	ArabicConverter *converter = [[ArabicConverter alloc] inint];
+	NSString* convertedString = [converter convertArabic:myNormalString];
+	//then set this string to any label or component you want to use custom fonts.
+	
+	//Convert Back From Arabic Presentation Forms B
+	ArabicConverter *converter = [[ArabicConverter alloc] inint];
+	NSString* myNormalString = [converter convertArabicBack:convertedString];
+	
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Tip:
+=-=-=-
+
+I realized it doesn't support all kinds of custom fonts, there is a small set that is still
+not supported, will solve this in a new release.
