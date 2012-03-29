@@ -23,13 +23,13 @@ Basic Usage:
     2) include ArabicConverter.h in your files.
     	
 	//Convert to Arabic Presentation Forms B - to allow custom fonts
-	ArabicConverter *converter = [[ArabicConverter alloc] inint];
+	ArabicConverter *converter = [[ArabicConverter alloc] init];
 	NSString* convertedString = [converter convertArabic:myNormalString];
 	//then set this string to any label or component you want 
 		//to use custom fonts.
 	
 	//Convert Back From Arabic Presentation Forms B
-	ArabicConverter *converter = [[ArabicConverter alloc] inint];
+	ArabicConverter *converter = [[ArabicConverter alloc] init];
 	NSString* myNormalString = [converter convertArabicBack:convertedString];
 	
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
