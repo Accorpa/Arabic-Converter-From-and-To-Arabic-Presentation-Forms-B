@@ -267,7 +267,7 @@ static BOOL IsTransparent(uint c)
     }
     shaped[writeCount] = NIL;
     NSString* toReturn = @"";
-    for(int d=0; d < len; d++)
+    for(int d=0; d < writeCount; d++)
     {
         toReturn = [NSString stringWithFormat:@"%@%C",toReturn,shaped[d]];
     }
