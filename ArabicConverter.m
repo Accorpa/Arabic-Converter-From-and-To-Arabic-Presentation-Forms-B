@@ -179,7 +179,7 @@ static BOOL IsTransparent(uint c)
 -(NSString *)convertArabic:(NSString *)normal
 {
     int len = [normal length];
-    CharRep crep = { 0 };
+    CharRep crep ;
     CombCharRep combcrep;
     uint * shaped = (uint *) malloc(sizeof(uint) * (len + 1));
     int writeCount = 0;
@@ -271,6 +271,7 @@ static BOOL IsTransparent(uint c)
     {
         toReturn = [NSString stringWithFormat:@"%@%C",toReturn,shaped[d]];
     }
+    free(shaped);
     return toReturn; 
 }
 
