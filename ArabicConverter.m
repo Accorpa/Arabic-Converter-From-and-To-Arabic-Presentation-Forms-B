@@ -18,20 +18,20 @@
 
 typedef struct
 {
-    uint code;
-    uint mIsolated;
-    uint mInitial;
-    uint mMedial;
-    uint mFinal;
+    unsigned short code;
+    unsigned short mIsolated;
+    unsigned short mInitial;
+    unsigned short mMedial;
+    unsigned short mFinal;
 } CharRep;
 
 typedef struct
 {
-    uint code[2];
-    uint mIsolated;
-    uint mInitial;
-    uint mMedial;
-    uint mFinal;
+    unsigned short code[2];
+    unsigned short mIsolated;
+    unsigned short mInitial;
+    unsigned short mMedial;
+    unsigned short mFinal;
 } CombCharRep;
 
 CharRep charsMap[MAP_LENGTH] =
@@ -127,7 +127,7 @@ uint transChars[TRANS_CHARS_LENGTH] =
     0x06ED /* ARABIC SMALL LOW MEEM */
 };
 
-static BOOL CharacterMapContains(uint c)
+static BOOL CharacterMapContains(unsigned short c)
 {
     for (int i = 0; i < MAP_LENGTH; i++)
     {
@@ -138,7 +138,7 @@ static BOOL CharacterMapContains(uint c)
     return false;
 }
 
-static CharRep GetCharRep(uint c)
+static CharRep GetCharRep(unsigned short c)
 {
     for (int i = 0; i < MAP_LENGTH; i++)
     {
@@ -150,7 +150,7 @@ static CharRep GetCharRep(uint c)
     return nilRep;
 }
 
-static CombCharRep GetCombCharRep(uint c1, uint c2)
+static CombCharRep GetCombCharRep(unsigned short c1, unsigned short c2)
 {
     int i = 0;
     for (i = 0; i < COMB_MAP_LENGTH; i++)
@@ -164,7 +164,7 @@ static CombCharRep GetCombCharRep(uint c1, uint c2)
     return combNilRep;
 }
 
-static BOOL IsTransparent(uint c)
+static BOOL IsTransparent(unsigned short c)
 {
     int i = 0;
     for (i = 0; i < TRANS_CHARS_LENGTH; i++)
@@ -181,7 +181,7 @@ static BOOL IsTransparent(uint c)
     int len = [normal length];
     CharRep crep ;
     CombCharRep combcrep;
-    uint * shaped = (uint *) malloc(sizeof(uint) * (len + 1));
+    unsigned short * shaped = (unsigned short *) malloc(sizeof(unsigned short) * (len + 1));
     int writeCount = 0;
     for (int i = 0; i < len; i++)
     {
@@ -279,8 +279,8 @@ static BOOL IsTransparent(uint c)
 -(NSString *)convertArabicBack:(NSString *)apfb
 {
     NSString* toReturn = @"";
-    uint charCode;
-    uint selectedChar;
+    unsigned short charCode;
+    unsigned short selectedChar;
     NSLog(@"apfb length: %d", [apfb length]);
     
     for(int i=0; i < [apfb length]; i++)
