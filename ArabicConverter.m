@@ -266,10 +266,10 @@ static BOOL IsTransparent(unsigned short c)
         }
     }
     shaped[writeCount] = NIL;
-    NSString* toReturn = @"";
+    NSMutableString* toReturn = [NSMutableString new];
     for(int d=0; d < writeCount; d++)
     {
-        toReturn = [NSString stringWithFormat:@"%@%C",toReturn,shaped[d]];
+        [toReturn appendFormat:@"%C", shaped[d]];
     }
     free(shaped);
     return toReturn; 
